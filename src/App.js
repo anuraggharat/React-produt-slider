@@ -4,17 +4,16 @@ import { data } from "./Data";
 import AOS from "aos";
 function App() {
   const [count, setCount] = useState(0);
-  console.log(data);
 
   const next = () => {
-    if (count == 4) {
+    if (count === 4) {
       setCount(0);
     } else {
       setCount(count + 1);
     }
   };
   const prev = () => {
-    if (count == 0) {
+    if (count === 0) {
       setCount(4);
     } else {
       setCount(count - 1);
