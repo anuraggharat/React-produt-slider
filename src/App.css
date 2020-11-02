@@ -1,38 +1,105 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;800&display=swap");
+:root {
+  --black: #2d3436;
+  --grey: #bdc3c7;
+  --white: #fafafa;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  font-family: "Montserrat", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0rem;
+}
+p {
+  font-size: 12px !important;
+  color: var(--black);
+  font-weight: bolder;
+}
+h6 {
+  font-weight: 400;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+a {
+  font-size: 12px;
+}
+.text-grey {
+  color: var(--grey);
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+}
+.nav > div {
+  margin: 0px 20px;
+}
+.app {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-height: 100vh;
+  padding: 0px;
+  overflow-y: hidden;
+}
+.col-6 {
+  width: 50%;
+  max-height: 100vh;
+}
+.content {
   text-align: center;
+  padding-top: 100px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 25px 0px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.space-around {
+  justify-content: space-around;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.col {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.btns {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+button {
+  width: 35%;
+  margin: 10px 2px;
+  padding: 10px;
+  border: none;
+  font-size: 0.8rem;
+  height: 40px;
+  background-color: var(--black);
+  color: var(--white);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mt-5 {
+  margin-top: 50px;
+}
+.mt-3 {
+  margin-top: 30px;
 }
