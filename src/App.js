@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import product1 from "./assets/product1.jpg";
 import { data } from "./Data";
-
+import AOS from "aos";
 function App() {
   const [count, setCount] = useState(0);
   console.log(data);
+
+  const next = () => {
+    if (count == 4) {
+      setCount(0);
+    } else {
+      setCount(count + 1);
+    }
+  };
+  const prev = () => {
+    if (count == 0) {
+      setCount(4);
+    } else {
+      setCount(count - 1);
+    }
+  };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div className="app">
@@ -17,32 +35,36 @@ function App() {
           <p>CLOSE</p>
         </div>
       </div>
-      <div className="col-6">
+      <div className="col-6 product-image-container">
         <img
-          src={product1}
+          src={data[count].image}
           className="product-image"
           alt="product"
-          width="100%"
-          height="100%"
+          width="75%"
+          height="75%"
         />
       </div>
       <div className="col-6 content">
         <div className="container">
           <p>MARCH</p>
-          <div className="row space-around">
+          <div className="row">
             <div className="col-2">
-              <a className="text-grey">PREVIOUS</a>
+              <a className="text-grey" onClick={() => prev()}>
+                PREVIOUS
+              </a>
             </div>
             <div className="col-8">
-              <h1>FABULOUS FACE WASH</h1>
+              <h1>{data[count].name}</h1>
             </div>
             <div className="col-2">
-              <a className="text-grey">NEXT</a>
+              <a className="text-grey" onClick={() => next()}>
+                NEXT
+              </a>
             </div>
           </div>
           <div className="col">
             <p>Normal to Dry Skin</p>
-            <h4>$39.00</h4>
+            <h4>{data[count].cost}</h4>
           </div>
           <div className="col mt-3">
             <p className="text-grey">INGREDIENTS</p>
