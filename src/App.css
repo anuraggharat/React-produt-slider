@@ -77,10 +77,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
 }
 .content {
   text-align: center;
@@ -120,4 +116,49 @@ button {
 }
 .mt-3 {
   margin-top: 30px;
+}
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+  }
+  .col-6 {
+    width: 100%;
+  }
+  .product-image-container {
+    padding-top: 25px;
+    height: 50vh;
+  }
+  .product-image {
+    height: 80% !important;
+    width: 100%;
+  }
+  p,
+  a,
+  button {
+    font-size: 10px;
+  }
+  h1 {
+    font-size: 15px;
+  }
 }
